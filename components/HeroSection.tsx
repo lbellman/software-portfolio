@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 function HeroSection() {
   const headingId = "hero-heading";
@@ -25,8 +26,8 @@ function HeroSection() {
 
             <p id={descriptionId} className="max-w-prose text-muted-foreground">
               I design clean, scalable software systems in environments that
-              value integrity, clarity, and long-term impact. <br /> <br /> 
-              Bring order, kindness, and long-term thinking to your team.
+              value integrity, clarity, and long-term impact. <br /> <br />I
+              bring order, intention, and long-term thinking to any problem.
             </p>
           </div>
 
@@ -43,15 +44,17 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Right column: reserved image area */}
-        <div
-          aria-hidden="true"
-          className="relative flex min-h-[220px] w-full items-center justify-center rounded-3xl border border-dashed border-primary/20 bg-primary/5 shadow-sm sm:min-h-[260px] md:min-h-[320px] lg:min-h-[360px]"
-        >
-          <div className="pointer-events-none absolute inset-6 rounded-2xl border border-primary/10" />
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Future artwork here
-          </p>
+        {/* Right column: hero illustration */}
+        <div className="relative w-full max-w-2xl lg:max-w-none">
+          <Image
+            src="/hero-image.webp"
+            alt="Abstract illustration of a calm, nature-inspired home and mind."
+            width={960}
+            height={600}
+            priority
+            sizes="(min-width: 1024px) 40vw, (min-width: 640px) 70vw, 90vw"
+            className="h-auto w-full"
+          />
         </div>
       </div>
     </section>
