@@ -21,7 +21,7 @@ type NavItem = {
 const navItems: NavItem[] = [
   { label: "Projects", href: "/projects" },
   { label: "About", href: "#about" },
-  { label: "Get in Touch", href: "#contact", isPrimary: true },
+  { label: "Get in Touch", href: "/#get-in-touch", isPrimary: true },
 ];
 
 function Navbar() {

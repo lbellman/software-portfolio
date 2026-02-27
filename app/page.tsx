@@ -1,7 +1,8 @@
+import ExperienceSection from "@/components/ExperienceSection";
+import GetInTouchSection from "@/components/GetInTouchSection";
 import HeroSection from "@/components/HeroSection";
 import WhatIDoBestSection from "@/components/WhatIDoBestSection";
 import WhoIAmSection from "@/components/WhoIAmSection";
-import GetInTouchSection from "@/components/GetInTouchSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <WhoIAmSection />
       <WhatIDoBestSection />
+      <ExperienceSection />
       <GetInTouchSection />
     </main>
   );

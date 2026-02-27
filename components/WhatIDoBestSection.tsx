@@ -1,4 +1,4 @@
-import { Quote } from "lucide-react";
+import FlatTestimonial from "@/components/FlatTestimonial";
 
 const sectionId = "what-i-do-best";
 
@@ -50,28 +50,12 @@ export default function WhatIDoBestSection() {
           </div>
 
           {/* Right: testimonial — flat, no card */}
-          <blockquote className="relative flex flex-col justify-center py-4 pl-14 md:py-8 md:pl-20">
-            <Quote
-              aria-hidden
-              className="absolute left-2 top-2 h-16 w-16 text-primary md:h-24 md:w-24 opacity-30"
-            />
-            <p className="text-lg font-medium leading-relaxed text-muted-foreground md:text-xl lg:text-3xl">
-              When things were complex or messy, Lindsey was the one{" "}
-              <span className="text-primary">
-                bringing structure and calm to the situation
-              </span>
-              . She cared about quality, understood the bigger picture, and
-              followed through.
-            </p>
-            <footer className="mt-6">
-              <cite className="not-italic">
-                <span className="block font-semibold text-foreground">
-                  Brent Story
-                </span>
-                <span className="text-muted-foreground ">CEO • EmitIQ</span>
-              </cite>
-            </footer>
-          </blockquote>
+          <FlatTestimonial
+            quote="When things were complex or messy, Lindsey was the one bringing structure and calm to the situation. She cared about quality, understood the bigger picture, and followed through."
+            name="Brent Story"
+            title="CEO • EmitIQ"
+            highlight="bringing structure and calm to the situation"
+          />
         </div>
       </div>
     </section>

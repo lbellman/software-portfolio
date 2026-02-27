@@ -9,16 +9,26 @@ export default function MyFriendsArtSection() {
       {/* Left side: title, tags, description, CTA */}
       <div className="w-full flex items-center justify-center">
         <div className="flex flex-col flex-nowrap  px-16">
+          <p
+            className="uppercase-overline mb-8 animate-fade-up opacity-0"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Personal Project
+          </p>
           <Image
             src="/my-friends-art/title-black.svg"
             alt="My Friends Art logo"
             width={200}
             height={56}
-            className="h-12 w-auto object-contain object-left mb-4 md:h-14 "
+            className="h-12 w-auto object-contain object-left mb-4 md:h-14 animate-fade-up opacity-0"
+            style={{ animationDelay: "0.4s" }}
             priority
           />
 
-          <div className="flex items-center gap-5">
+          <div
+            className="flex items-center gap-5 animate-fade-up opacity-0"
+            style={{ animationDelay: "0.6s" }}
+          >
             <Image
               src="/react-logo.png"
               alt="React"
@@ -49,7 +59,10 @@ export default function MyFriendsArtSection() {
             />
           </div>
 
-          <p className="mt-4 mb-6">
+          <p
+            className="mt-4 mb-6 animate-fade-up opacity-0"
+            style={{ animationDelay: "0.8s" }}
+          >
             My Friend&apos;s Art is a{" "}
             <span className="text-primary font-semibold">
               full-stack e-commerce platform
@@ -58,14 +71,17 @@ export default function MyFriendsArtSection() {
             application is built on a React/Typescript/Tailwind frontend, and a
             Supabase backend with a Stripe integration to handle payments.{" "}
           </p>
-          <div className="mb-4 ">
+          <div
+            className="mb-4 animate-fade-up opacity-0"
+            style={{ animationDelay: "1s" }}
+          >
             <Button asChild>
               <Link
                 href={"/projects/my-friends-art"}
-                className="inline-flex items-center gap-2"
+                className="inline-flex items-center gap-2 group"
               >
                 View Project
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </Button>
           </div>
@@ -74,18 +90,21 @@ export default function MyFriendsArtSection() {
 
       {/* Right side: fixed-size container; image content scrolls inside it */}
 
-        <section className="w-full flex justify-center ">
-          <div className="w-full overflow-hidden">
-            <Image
-              src="/my-friends-art/collage.webp"
-              alt="My Friend's Art — marketplace collage"
-              width={1600}
-              height={900}
-              className="w-full h-auto object-cover object-center"
-              sizes="(min-width: 1280px) 70vw, (min-width: 768px) 80vw, 100vw"
-            />
-          </div>
-        </section>
+      <section
+        className="w-full flex justify-center animate-fade-up opacity-0"
+        style={{ animationDelay: "1.2s" }}
+      >
+        <div className="w-full overflow-hidden">
+          <Image
+            src="/my-friends-art/collage.webp"
+            alt="My Friend's Art — marketplace collage"
+            width={1600}
+            height={900}
+            className="w-full h-auto object-cover object-center"
+            sizes="(min-width: 1280px) 70vw, (min-width: 768px) 80vw, 100vw"
+          />
+        </div>
+      </section>
     </section>
   );
 }
