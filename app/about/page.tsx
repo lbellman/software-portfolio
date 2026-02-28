@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BookOpen, Palette, Sparkles } from "lucide-react";
 import AboutHero from "@/components/AboutHero";
 import AboutImageCarousel from "@/components/AboutImageCarousel";
 import FadeUpSection from "@/components/FadeUpSection";
@@ -8,6 +9,44 @@ export const metadata = {
   title: "About | Lindsey Bellman",
   description: "Learn more about Lindsey Bellman — story, values, and vision.",
 };
+
+const FREE_TIME_SECTIONS = [
+  {
+    title: "Books",
+    icon: <div>📚</div>,
+    items: [
+      { title: "Ishmael", author: "Daniel Quinn" },
+      { title: "Godel, Escher, Bach", author: "Douglas Hofstadter" },
+      { title: "Educated", author: "Tara Westover" },
+      { title: "A Room of One's Own", author: "Virginia Woolf" },
+      { title: "Piranesi", author: "Susanna Clarke" },
+      { title: "Coders", author: "Clive Thompson" },
+    ],
+  },
+  {
+    title: "Hobbies",
+    icon: <div>🎨</div>,
+    items: [
+      "Music production (songwriting, recording, producing)",
+      "Hiking/camping",
+      "Painting (acrylic, digital, watercolor)",
+      "Jazz piano",
+      "Gardening",
+    ],
+  },
+  {
+    title: "Interests",
+    icon: <div>✨</div>,
+    items: [
+      "Theoretical physics",
+      "Astronomy",
+      "Music theory",
+      "Philosophy",
+      "Greek mythology",
+      "Ancient civilizations",
+    ],
+  },
+] as const;
 
 export default function AboutPage() {
   return (
@@ -156,17 +195,72 @@ export default function AboutPage() {
         </div>
       </FadeUpSection>
 
-      {/* Scrolling images + thumbnails */}
+      {/* In My Free Time */}
       <FadeUpSection
-        as="div"
-        className="border-t border-border"
-        delayMs={200}
+        id="in-my-free-time"
+        aria-labelledby="in-my-free-time-heading"
+        className="border-t border-border px-6 py-16 md:py-20 lg:px-12"
+        delayMs={100}
       >
+        <div className="mx-auto max-w-6xl">
+          <h2
+            id="in-my-free-time-heading"
+            className="mb-10 text-center text-2xl font-light tracking-editorial md:mb-12 md:text-3xl"
+          >
+            In My Free Time
+          </h2>
+          <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+            {FREE_TIME_SECTIONS.map((section) => {
+              const Icon = section.icon;
+              return (
+                <div
+                  key={section.title}
+                  className="rounded-xl border border-border bg-card p-6 shadow-sm"
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    {Icon}
+
+                    <h3 className="text-lg font-semibold text-secondary">
+                      {section.title}
+                    </h3>
+                  </div>
+                  <ul
+                    className="space-y-2 text-sm text-muted-foreground leading-relaxed"
+                    role="list"
+                  >
+                    {section.items.map((item, i) => (
+                      <li key={i} className="flex items-center gap-3">
+                        <span
+                          className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                          aria-hidden
+                        />
+                        {typeof item === "string" ? (
+                          item
+                        ) : (
+                          <span>
+                            <em>{item.title}</em> - {item.author}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </FadeUpSection>
+
+      {/* Scrolling images + thumbnails */}
+      <FadeUpSection as="div" className="border-t border-border" delayMs={200}>
         <AboutImageCarousel />
       </FadeUpSection>
 
       {/* Back to home */}
-      <FadeUpSection className="border-t border-border px-6 py-10 lg:px-12" delayMs={100}>
+      <FadeUpSection
+        className="border-t border-border px-6 py-10 lg:px-12"
+        delayMs={100}
+      >
         <div className="mx-auto max-w-6xl text-center">
           <Link
             href="/"
