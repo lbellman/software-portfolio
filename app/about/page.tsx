@@ -50,7 +50,7 @@ const FREE_TIME_SECTIONS = [
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-background pb-16">
+    <main id="main-content" className="relative min-h-screen bg-background pb-16">
       <AboutHero />
 
       {/* My story — image left, text right */}
@@ -256,20 +256,18 @@ export default function AboutPage() {
         <AboutImageCarousel />
       </FadeUpSection>
 
-      {/* Back to home */}
-      <FadeUpSection
-        className="border-t border-border px-6 py-10 lg:px-12"
-        delayMs={100}
-      >
-        <div className="mx-auto max-w-6xl text-center">
-          <Link
-            href="/"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            ← Back to home
-          </Link>
-        </div>
-      </FadeUpSection>
+      <div className="h-32" />
+      {/* Footer text image */}
+      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden px-8 opacity-[0.05]" aria-hidden>
+        <Image
+          src="/footer-text.svg"
+          alt=""
+          width={1920}
+          height={120}
+          className="h-auto w-full object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
     </main>
   );
 }

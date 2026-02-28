@@ -19,41 +19,40 @@ export default function GetInTouchSection() {
       ref={sectionRef}
       id={sectionId}
       aria-labelledby="get-in-touch-heading"
-      className="relative flex min-h-screen w-full flex-col md:flex-row"
+      className="relative flex min-h-screen w-full items-center justify-center"
     >
       <div
-        className={`flex flex-1 w-full flex-col md:flex-row ${isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"}`}
+        className={`flex w-full max-w-4xl flex-col items-center justify-center gap-6 px-6 py-16 md:flex-row md:gap-6 md:py-20 ${isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"}`}
       >
-      {/* Left: illustration */}
-      <div
-        aria-hidden="true"
-        className="relative min-h-[260px] w-full flex-1 md:min-h-0"
-      >
-        <Image
-          src="/get-in-touch.webp"
-          alt=""
-          fill
-          className="object-cover"
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          priority
-        />
-      </div>
+        {/* Square headshot with rounded edges */}
+        <div aria-hidden="true" className="shrink-0">
+          <div className="relative aspect-square w-64 overflow-hidden rounded-xl border-4 border-border bg-card shadow-md md:w-80">
+            <Image
+              src="/about/headshot.webp"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 320px, 256px"
+              priority
+            />
+          </div>
+        </div>
 
-      {/* Right: contact info card */}
-      <div className="flex flex-1 flex-col items-center justify-center px-6 py-16 md:py-20">
-        <div className="w-full max-w-md rounded-xl border border-border bg-card p-8 shadow-sm md:p-10">
-          <h2
-            id="get-in-touch-heading"
-            className="mb-2 tracking-widest text-secondary font-normal"
-          >
-            Get In Touch
-          </h2>
-          <p className="mb-8 text-sm text-muted-foreground">
-            I’d love to connect and talk about how we can build something
-            meaningful together.
-          </p>
+        {/* Contact info card */}
+        <div className="w-full shrink-0 md:max-w-md">
+          <div className="rounded-xl border border-border bg-card p-8 shadow-sm md:p-10">
+            <h2
+              id="get-in-touch-heading"
+              className="mb-2 tracking-widest text-secondary font-normal"
+            >
+              Get In Touch
+            </h2>
+            <p className="mb-8 text-sm text-muted-foreground">
+              I’d love to connect and talk about how we can build something
+              meaningful together.
+            </p>
 
-          <ul className="flex flex-col gap-5 text-foreground" role="list">
+            <ul className="flex flex-col gap-5 text-foreground" role="list">
             <li>
               <Link
                 href={`mailto:${contact.email}`}
@@ -110,9 +109,8 @@ export default function GetInTouchSection() {
               </Link>
             </li>
           </ul>
+          </div>
         </div>
-      </div>
-
       </div>
 
       {/* Full-width footer text image at bottom of section */}

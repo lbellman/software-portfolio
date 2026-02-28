@@ -87,7 +87,7 @@ export default function AboutImageCarousel() {
               onClick={() => goTo(index)}
               aria-label={`Go to image ${index + 1} of ${LEN}`}
               aria-current={index === logicalIndex ? "true" : undefined}
-              className={`relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 md:h-14 md:w-14 ${
+              className={`relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 md:h-12 md:w-12 lg:h-14 lg:w-14 ${
                 index === logicalIndex
                   ? "border-primary ring-2 ring-primary/30"
                   : "border-transparent opacity-70 hover:opacity-100"
@@ -98,7 +98,7 @@ export default function AboutImageCarousel() {
                 alt=""
                 fill
                 className="object-cover"
-                sizes="56px"
+                sizes="36px"
               />
             </button>
           ))}
