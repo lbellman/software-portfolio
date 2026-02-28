@@ -20,7 +20,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Projects", href: "/projects" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Get in Touch", href: "/#get-in-touch", isPrimary: true },
 ];
 
@@ -36,10 +36,7 @@ function Navbar() {
         Skip to main content
       </a>
 
-      <nav
-        aria-label="Primary"
-        className="backdrop-blur-lg"
-      >
+      <nav aria-label="Primary" className="backdrop-blur-lg">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div>

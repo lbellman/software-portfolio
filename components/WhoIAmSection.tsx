@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useFadeUp } from "@/hooks/useFadeUp";
 
 const whoIAmId = "who-i-am";
 
@@ -19,13 +22,20 @@ const stewardBullets = [
 ];
 
 export default function WhoIAmSection() {
+  const { ref: sectionRef, isVisible } = useFadeUp({ delayMs: 500 });
+
   return (
     <section
+      ref={sectionRef}
       id={whoIAmId}
       aria-labelledby="who-i-am-heading"
       className="w-full px-6 py-12 sm:py-16 md:py-20"
     >
-      <div className="mx-auto max-w-4xl text-center">
+      <div
+        className={`mx-auto max-w-4xl text-center transition-all duration-700 ${
+          isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"
+        }`}
+      >
         <h2
           id="who-i-am-heading"
           className="mb-3 tracking-widest text-secondary font-normal"
@@ -33,11 +43,17 @@ export default function WhoIAmSection() {
           Who I Am
         </h2>
         <p className="mx-auto text-lg max-w-2xl text-muted-foreground">
-          My core values can be distilled into two archetypes.
+          I am a Full-Stack Software Engineer with a focus on frontend
+          development. My core values can be distilled into two archetypes:
         </p>
       </div>
 
-      <div className="mx-auto mt-8 grid w-full max-w-5xl gap-8 sm:gap-10 md:grid-cols-2 md:mt-12">
+      <div
+        className={`mx-auto mt-8 grid w-full max-w-5xl gap-8 sm:gap-10 md:grid-cols-2 md:mt-12 transition-all duration-700 ${
+          isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"
+        }`}
+        style={isVisible ? undefined : { animationDelay: "0.15s" }}
+      >
         <article
           className="rounded-xl border border-border bg-card overflow-hidden shadow-sm"
           aria-labelledby="architect-title"
@@ -52,26 +68,26 @@ export default function WhoIAmSection() {
             />
           </div>
           <div className="p-6 sm:p-8 sm:pt-6">
-          <h3
-            id="architect-title"
-            className="mb-2 font-semibold text-secondary"
-          >
-            The Architect
-          </h3>
-          <p className="mb-6 text-muted-foreground">
-            Builds systems that scale.
-          </p>
-          <ul className="space-y-3 text-sm text-foreground">
-            {architectBullets.map((item, i) => (
-              <li key={i} className="flex gap-3">
-                <span
-                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
-                  aria-hidden
-                />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+            <h3
+              id="architect-title"
+              className="mb-2 font-semibold text-secondary"
+            >
+              The Architect
+            </h3>
+            <p className="mb-6 text-muted-foreground">
+              Builds systems that scale.
+            </p>
+            <ul className="space-y-3 text-sm text-foreground">
+              {architectBullets.map((item, i) => (
+                <li key={i} className="flex gap-3">
+                  <span
+                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                    aria-hidden
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </article>
 
@@ -89,7 +105,10 @@ export default function WhoIAmSection() {
             />
           </div>
           <div className="p-6 sm:p-8 sm:pt-6">
-            <h3 id="steward-title" className="mb-2 font-semibold text-secondary">
+            <h3
+              id="steward-title"
+              className="mb-2 font-semibold text-secondary"
+            >
               The Steward
             </h3>
             <p className="mb-6 text-muted-foreground">

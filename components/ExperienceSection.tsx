@@ -1,5 +1,6 @@
 "use client";
 
+import { useFadeUp } from "@/hooks/useFadeUp";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import FlatTestimonial from "@/components/FlatTestimonial";
@@ -93,6 +94,7 @@ const carouselItems = [
 ];
 
 export default function ExperienceSection() {
+  const { ref: sectionRef, isVisible } = useFadeUp();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = carouselItems.length;
@@ -127,18 +129,22 @@ export default function ExperienceSection() {
 
   return (
     <section
+      ref={sectionRef}
       id={sectionId}
       aria-labelledby="experience-heading"
       className="w-full overflow-hidden py-16 sm:py-20 md:py-24 max-w-7xl mx-auto"
     >
-      <h2
-        id="experience-heading"
-        className="mb-10 px-6 text-center tracking-widest text-secondary font-normal md:mb-12"
+      <div
+        className={isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"}
       >
-        Experience
-      </h2>
+        <h2
+          id="experience-heading"
+          className="mb-10 px-6 text-center tracking-widest text-secondary font-normal md:mb-12"
+        >
+          Experience
+        </h2>
 
-      <div className="relative">
+        <div className="relative">
         <div
           ref={scrollRef}
           className="flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth pb-4 md:pb-6 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden"
@@ -235,6 +241,7 @@ export default function ExperienceSection() {
             />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

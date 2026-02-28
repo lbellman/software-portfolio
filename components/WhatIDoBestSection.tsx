@@ -1,58 +1,74 @@
+"use client";
+
 import FlatTestimonial from "@/components/FlatTestimonial";
+import { useFadeUp } from "@/hooks/useFadeUp";
+import {
+  Code2,
+  Database,
+  GraduationCap,
+  Layers,
+  Palette,
+  PenTool,
+  type LucideIcon,
+} from "lucide-react";
 
 const sectionId = "what-i-do-best";
 
-const technicalSkills = [
-  "React / TypeScript",
-  "Design Systems",
-  "Frontend Architecture",
-  "Database Design",
-  "UI/UX Design",
-  "API Design & Integration",
-  "Testing & Quality",
-  "Accessibility (a11y)",
+const technicalSkills: { label: string; icon: LucideIcon }[] = [
+  { label: "React / TypeScript", icon: Code2 },
+  { label: "Design Systems", icon: Palette },
+  { label: "Frontend Architecture", icon: Layers },
+  { label: "UI/UX Design", icon: PenTool },
+  { label: "Database Design", icon: Database },
+  { label: "Technical Mentorship", icon: GraduationCap },
 ];
 
 export default function WhatIDoBestSection() {
+  const { ref: sectionRef, isVisible } = useFadeUp();
   return (
     <section
+      ref={sectionRef}
       id={sectionId}
       aria-labelledby="what-i-do-best-heading"
       className="w-full px-6 py-16 sm:py-20 md:py-24"
     >
-      <div className="mx-auto max-w-6xl">
+      <div
+        className={`mx-auto max-w-6xl ${isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"}`}
+      >
         <h2
           id="what-i-do-best-heading"
-          className="mb-10 text-center tracking-widest text-secondary font-normal md:mb-12"
+          className="mb-4 text-center tracking-widest text-secondary font-normal"
         >
           What I Do Best
         </h2>
+        <p className="mx-auto mb-10 max-w-xl text-center text-sm text-muted-foreground md:mb-12">
+          I can adapt to any technical stack or domain, but this is what I
+          specialize in.
+        </p>
 
-        <div className="grid gap-8 md:grid-cols-2 md:items-start">
-          {/* Left: one card, half width — Technical Skills */}
-          <div className="rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8 md:p-10">
-            <h3 className="mb-2">Technical Skills</h3>
-            <p className="mb-6 text-muted-foreground">
-              I can adapt to any technical stack or domain, but this is what I
-              specialize in.
-            </p>
-            <ul className="space-y-3 text-sm text-foreground" role="list">
-              {technicalSkills.map((item, i) => (
-                <li key={i} className="flex gap-3">
-                  <span
-                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
-                    aria-hidden
-                  />
-                  <span>{item}</span>
-                </li>
+        <div className="grid gap-8 md:grid-cols-2 md:items-center">
+          {/* Left: technical skills as small cards in two columns */}
+          <div className="grid grid-cols-2 gap-4">
+              {technicalSkills.map(({ label, icon: Icon }, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-4 rounded-lg border border-border bg-card p-5 shadow-sm sm:p-6"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </div>
+                  <span className="text-base font-medium text-foreground">
+                    {label}
+                  </span>
+                </div>
               ))}
-            </ul>
           </div>
 
           {/* Right: testimonial — flat, no card */}
           <FlatTestimonial
             quote="When things were complex or messy, Lindsey was the one bringing structure and calm to the situation. She cared about quality, understood the bigger picture, and followed through."
             name="Brent Story"
+            size='small'
             title="CEO • EmitIQ"
             highlight="bringing structure and calm to the situation"
           />

@@ -1,3 +1,6 @@
+"use client";
+
+import { useFadeUp } from "@/hooks/useFadeUp";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,12 +13,17 @@ const contact = {
 };
 
 export default function GetInTouchSection() {
+  const { ref: sectionRef, isVisible } = useFadeUp();
   return (
     <section
+      ref={sectionRef}
       id={sectionId}
       aria-labelledby="get-in-touch-heading"
       className="relative flex min-h-screen w-full flex-col md:flex-row"
     >
+      <div
+        className={`flex flex-1 w-full flex-col md:flex-row ${isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"}`}
+      >
       {/* Left: illustration */}
       <div
         aria-hidden="true"
@@ -103,6 +111,8 @@ export default function GetInTouchSection() {
             </li>
           </ul>
         </div>
+      </div>
+
       </div>
 
       {/* Full-width footer text image at bottom of section */}

@@ -1,30 +1,92 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import PlayingCard from "@/components/PlayingCard";
+import { Rank, Suit } from "@/app/projects/freecell/play/@types";
 
 export default function FreecellPage() {
   return (
     <main id="main-content" className="min-h-screen bg-background pt-24 pb-16">
       {/* Hero */}
       <section className="px-6 py-16 md:py-24 lg:px-12">
-        <div className="container mx-auto max-w-4xl text-center">
-          <p className="uppercase-overline mb-4">AI Coding Experiment</p>
-          <h1 className="mb-4 text-3xl font-light tracking-editorial md:text-4xl lg:text-5xl">
-            Freecell Card Game
-          </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground">
-            A classic Freecell solitaire game built with React/TypeScript, and
-            Cursor AI.
-          </p>
-          <Button asChild>
-            <Link
-              href={"/projects/my-friends-art"}
-              className="inline-flex items-center gap-2 group"
-            >
-              Play the Game
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-          </Button>
+        <div className="flex w-full items-center gap-4 md:gap-6">
+          {/* Left card stack */}
+          <div
+            aria-hidden="true"
+            className="hidden flex-1 items-center justify-center md:flex"
+          >
+            <div className="relative scale-75 opacity-70 sm:scale-90">
+              <div className="relative">
+                <PlayingCard suit={Suit.Hearts} rank={Rank.Queen} />
+              </div>
+              <div className="relative -mt-10 md:-mt-24">
+                <PlayingCard suit={Suit.Spades} rank={Rank.Eight} />
+              </div>
+              <div className="relative -mt-10 md:-mt-24">
+                <PlayingCard suit={Suit.Diamonds} rank={Rank.Four} />
+              </div>
+            </div>
+          </div>
+
+          {/* Center: back link / title / logos / description / button */}
+          <div className="container mx-auto flex max-w-4xl flex-2 flex-col items-center text-center">
+            <p className="uppercase-overline mb-4">AI Coding Experiment</p>
+            <h1 className="mb-6 text-3xl font-light tracking-editorial md:text-4xl lg:text-5xl">
+              Freecell Card Game
+            </h1>
+            <div className="mb-6 flex items-center justify-center gap-6">
+              <Image
+                src="/cursor-logo.svg"
+                alt="Cursor"
+                width={64}
+                height={64}
+                className="h-8 w-8 object-contain md:h-14 md:w-18"
+              />
+              <Image
+                src="/react-logo.png"
+                alt="React"
+                width={64}
+                height={64}
+                className="h-8 w-8 object-contain md:h-14 md:w-18"
+              />
+              <Image
+                src="/tailwind-logo.svg"
+                alt="Tailwind CSS"
+                width={64}
+                height={64}
+                className="h-8 w-8 object-contain md:h-14 md:w-24"
+              />
+            </div>
+
+            <Button asChild>
+              <Link
+                href={"/projects/freecell/play"}
+                className="inline-flex items-center gap-2 group"
+              >
+                Play the Game
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </Button>
+          </div>
+
+          {/* Right card stack */}
+          <div
+            aria-hidden="true"
+            className="hidden flex-1 items-center justify-center md:flex"
+          >
+            <div className="relative scale-75 opacity-70 sm:scale-90">
+              <div className="relative">
+                <PlayingCard suit={Suit.Clubs} rank={Rank.King} />
+              </div>
+              <div className="relative -mt-10 md:-mt-24">
+                <PlayingCard suit={Suit.Hearts} rank={Rank.Nine} />
+              </div>
+              <div className="relative -mt-10 md:-mt-24">
+                <PlayingCard suit={Suit.Spades} rank={Rank.Three} />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

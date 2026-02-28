@@ -1,6 +1,5 @@
-import MyFriendsArtSection from "@/components/MyFriendsArtSection";
 import FreecellCardGameSection from "@/components/FreecellCardGameSection";
-import ProjectsHero from "@/components/ProjectsHero";
+import MyFriendsArtSection from "@/components/MyFriendsArtSection";
 
 export default function ProjectsPage() {
   return (

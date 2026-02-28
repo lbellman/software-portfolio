@@ -1,25 +1,32 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { useFadeUp } from "@/hooks/useFadeUp";
 import Image from "next/image";
 import Link from "next/link";
 
 function HeroSection() {
   const headingId = "hero-heading";
   const descriptionId = "hero-description";
+  const { ref: sectionRef, isVisible } = useFadeUp();
 
   return (
     <section
+      ref={sectionRef}
       aria-labelledby={headingId}
       aria-describedby={descriptionId}
       className="flex min-h-screen w-full items-center px-6 py-24 sm:py-28"
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-stretch gap-12 lg:grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+      <div
+        className={`mx-auto flex w-full max-w-7xl flex-col items-stretch gap-12 lg:grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center ${!isVisible ? "opacity-0" : ""}`}
+      >
         {/* Left column: text content */}
         <div className="space-y-8 max-w-xl">
           <p
             className="uppercase-overline animate-fade-up opacity-0"
             style={{ animationDelay: "0.2s" }}
           >
-            Systems Architect & Technical Steward
+            Full Stack Software Engineer (Frontend-Leaning)
           </p>
 
           <div className="space-y-4">
@@ -37,9 +44,8 @@ function HeroSection() {
               className="max-w-prose text-muted-foreground animate-fade-up opacity-0"
               style={{ animationDelay: "0.6s" }}
             >
-              I design clean, scalable software systems in environments that
-              value integrity, clarity, and long-term impact. <br /> <br />I
-              bring order, intention, and long-term thinking to any problem.
+              I design clean, scalable software solutions in environments that
+              value integrity, clarity, and long-term impact.
             </p>
           </div>
 
