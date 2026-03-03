@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import FadeUpSection from "@/components/FadeUpSection";
 import ProgressAndPlanningSection from "@/components/ProgressAndPlanningSection";
 
 /** Paste your Figma prototype or design link here (e.g. from Share → Copy link) */
@@ -20,7 +21,7 @@ export default function MyFriendsArtPage() {
     >
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-12 overflow-hidden">
+        <div className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-12 overflow-hidden">
           <div className="container mx-auto text-center max-w-4xl relative z-10">
             <div className="flex flex-col items-center justify-center gap-8">
               <Image
@@ -131,10 +132,10 @@ export default function MyFriendsArtPage() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
         {/* My Friend's Art collage */}
-        <section className="w-full flex justify-center px-6 lg:px-12">
+        <FadeUpSection className="w-full flex justify-center px-6 lg:px-12">
           <div className="w-full max-w-[70%] overflow-hidden">
             <Image
               src="/my-friends-art/collage.webp"
@@ -145,10 +146,10 @@ export default function MyFriendsArtPage() {
               sizes="(min-width: 1280px) 70vw, (min-width: 768px) 80vw, 100vw"
             />
           </div>
-        </section>
+        </FadeUpSection>
 
         {/* Overview Section */}
-        <section className="py-20 lg:py-28 px-6 lg:px-12">
+        <FadeUpSection className="py-20 lg:py-28 px-6 lg:px-12">
           <div className="container mx-auto max-w-4xl">
             <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-light tracking-editorial text-foreground mb-6">
@@ -193,42 +194,10 @@ export default function MyFriendsArtPage() {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Progress & Planning — GitHub issues & milestones. Set GITHUB_REPO or GITHUB_REPO_MFA in .env.local (e.g. owner/repo). */}
-        <ProgressAndPlanningSection
-          repo={process.env.GITHUB_REPO_MFA ?? process.env.GITHUB_REPO}
-          accentColor={primaryPinkForeground}
-        />
-
-        {/* Figma prototype embed */}
-        <section className="py-20 lg:py-28 px-6 lg:px-12">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-light tracking-editorial text-foreground mb-8">
-              <Image
-                src="/figma-logo.svg"
-                alt=""
-                width={36}
-                height={36}
-                className="h-9 w-9 object-contain"
-              />
-              Figma Prototype
-            </h2>
-            <div className="relative w-full overflow-hidden rounded-lg border border-border bg-muted/30">
-              <div className="aspect-video w-full">
-                <iframe
-                  title="My Friend's Art — Figma prototype"
-                  className="absolute inset-0 h-full w-full"
-                  src={`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(FIGMA_PROTOTYPE_URL)}`}
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        </FadeUpSection>
 
         {/* Sombrio image + Problem, Constraints & Design Goals — 2 cols on large, stacked on small */}
-        <section className="py-20 lg:py-28 px-6 lg:px-12">
+        <FadeUpSection className="py-20 lg:py-28 px-6 lg:px-12">
           <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="space-y-8 order-1">
               <h2 className="text-3xl md:text-4xl font-light tracking-editorial text-foreground">
@@ -292,10 +261,10 @@ export default function MyFriendsArtPage() {
               />
             </div>
           </div>
-        </section>
+        </FadeUpSection>
 
         {/* Engineering — full-width card */}
-        <section className="py-20 lg:py-28 px-6 lg:px-12">
+        <FadeUpSection className="py-20 lg:py-28 px-6 lg:px-12">
           <div className="container mx-auto max-w-6xl">
             <div className="rounded-xl  bg-white/80 backdrop-blur-sm p-8 shadow-sm md:p-10">
               <h2 className="text-3xl md:text-4xl font-light tracking-editorial text-foreground mb-4">
@@ -307,7 +276,7 @@ export default function MyFriendsArtPage() {
                   alt="React"
                   width={64}
                   height={64}
-                  className="h-8 w-8 object-contain md:h-14 md:w-18"
+                  className="h-8 w-14 object-contain md:h-14 md:w-18"
                 />
                 <Image
                   src="/supabase-logo.svg"
@@ -328,7 +297,7 @@ export default function MyFriendsArtPage() {
                   alt="Stripe"
                   width={64}
                   height={64}
-                  className="h-10 w-20 object-contain md:h-14 md:w-14"
+                  className="h-10 w-16 object-contain md:h-14 md:w-14"
                 />
               </div>
               <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -385,10 +354,10 @@ export default function MyFriendsArtPage() {
               </div>
             </div>
           </div>
-        </section>
+        </FadeUpSection>
 
         {/* Birdy image + Future Vision — 2 cols on large (birdy left), stacked on small */}
-        <section className="py-20 lg:py-28 px-6 lg:px-12">
+        <FadeUpSection className="py-20 lg:py-28 px-6 lg:px-12">
           <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div className="w-full overflow-hidden rounded-lg order-1">
               <Image
@@ -431,7 +400,40 @@ export default function MyFriendsArtPage() {
               </div>
             </div>
           </div>
-        </section>
+        </FadeUpSection>
+
+        {/* Figma prototype embed */}
+        <FadeUpSection className="py-20 lg:py-28 px-6 lg:px-12">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-light tracking-editorial text-foreground mb-8">
+              <Image
+                src="/figma-logo.svg"
+                alt=""
+                width={36}
+                height={36}
+                className="h-9 w-9 object-contain"
+              />
+              Figma Prototype
+            </h2>
+            <div className="relative w-full overflow-hidden rounded-lg border border-border bg-muted/30">
+              <div className="aspect-video w-full">
+                <iframe
+                  title="My Friend's Art — Figma prototype"
+                  className="absolute inset-0 h-full w-full"
+                  src={`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(FIGMA_PROTOTYPE_URL)}`}
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </FadeUpSection>
+        {/* Progress & Planning — GitHub issues & milestones. Set GITHUB_REPO or GITHUB_REPO_MFA in .env.local (e.g. owner/repo). */}
+        <FadeUpSection>
+          <ProgressAndPlanningSection
+            repo={process.env.GITHUB_REPO_MFA ?? process.env.GITHUB_REPO}
+            accentColor={primaryPinkForeground}
+          />
+        </FadeUpSection>
       </main>
     </div>
   );

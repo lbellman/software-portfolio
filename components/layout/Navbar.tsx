@@ -25,6 +25,15 @@ const navItems: NavItem[] = [
   { label: "Get in Touch", href: "/#get-in-touch", isPrimary: true },
 ];
 
+const scrollToHash = (hash: string) => {
+  if (typeof window === "undefined") return;
+  const id = hash.startsWith("#") ? hash.slice(1) : hash;
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,7 +88,7 @@ function Navbar() {
                 className="rounded-full border-border/70 bg-background/80 text-muted-foreground hover:text-foreground"
                 aria-label="Open navigation menu"
               >
-                <MenuIcon className="size-5" />
+                <MenuIcon className="size-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
@@ -88,16 +97,38 @@ function Navbar() {
               className="min-w-48 rounded-lg border-border/60 bg-background/95 backdrop-blur-md"
             >
               {navItems.map((item) => {
-                const isCurrent = pathname === item.href;
+                const isHashOnHome = item.href.startsWith("/#");
+                const hash = isHashOnHome
+                  ? item.href.slice(item.href.indexOf("#"))
+                  : null;
+                const isOnHome = pathname === "/";
+                const resolvedHref =
+                  isHashOnHome && isOnHome && hash ? hash : item.href;
+                const isCurrent =
+                  pathname === item.href ||
+                  (isHashOnHome && isOnHome && hash === "#get-in-touch");
+
+                const handleClick = () => {
+                  if (isHashOnHome && isOnHome && hash) {
+                    scrollToHash(hash);
+                  }
+                };
+
                 return (
-                  <DropdownMenuItem key={item.href} asChild>
+                  <DropdownMenuItem
+                    key={item.href}
+                    asChild
+                    className="mb-1 mx-1"
+                  >
                     <Link
-                      href={item.href}
+                      href={resolvedHref}
                       aria-current={isCurrent ? "page" : undefined}
+                      onClick={handleClick}
                       className={
-                        item.isPrimary
-                          ? "rounded-full bg-primary px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground focus:bg-primary/90"
-                          : "text-xs tracking-[0.2em]"
+                        "px-4 py-2 uppercase-overline  " +
+                        (item.isPrimary
+                          ? "rounded-full bg-primary text-foreground font-semibold focus:bg-primary/90"
+                          : "text-xs uppercase-overline")
                       }
                     >
                       {item.label}
@@ -131,7 +162,25 @@ function NavLinks({
       className={`flex ${isMobile ? "flex-col gap-1" : "items-center gap-8"}`}
     >
       {items.map((item) => {
-        const isCurrent = pathname === item.href;
+        const isHashOnHome = item.href.startsWith("/#");
+        const hash = isHashOnHome
+          ? item.href.slice(item.href.indexOf("#"))
+          : null;
+        const isOnHome = pathname === "/";
+        const resolvedHref =
+          isHashOnHome && isOnHome && hash ? hash : item.href;
+        const isCurrent =
+          pathname === item.href ||
+          (isHashOnHome && isOnHome && hash === "#get-in-touch");
+
+        const handleClick = () => {
+          if (isHashOnHome && isOnHome && hash) {
+            scrollToHash(hash);
+          }
+          if (onItemClick) {
+            onItemClick();
+          }
+        };
 
         if (item.isPrimary) {
           return (
@@ -142,9 +191,9 @@ function NavLinks({
                 className="rounded-full px-6 py-2 text-xs font-semibold uppercase tracking-[0.16em]"
               >
                 <Link
-                  href={item.href}
+                  href={resolvedHref}
                   aria-current={isCurrent ? "page" : undefined}
-                  onClick={onItemClick}
+                  onClick={handleClick}
                 >
                   {item.label}
                 </Link>
@@ -164,9 +213,9 @@ function NavLinks({
               }`}
             >
               <Link
-                href={item.href}
+                href={resolvedHref}
                 aria-current={isCurrent ? "page" : undefined}
-                onClick={onItemClick}
+                onClick={handleClick}
               >
                 {item.label}
               </Link>

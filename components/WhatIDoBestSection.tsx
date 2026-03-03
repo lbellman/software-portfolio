@@ -41,34 +41,34 @@ export default function WhatIDoBestSection() {
         >
           What I Do Best
         </h2>
-        <p className="mx-auto mb-10 max-w-xl text-center text-sm text-muted-foreground md:mb-12">
+        <p className="mx-auto mb-10 max-w-xl text-center text-sm md:text-lg text-muted-foreground md:mb-12">
           I can adapt to any technical stack or domain, but this is what I
           specialize in.
         </p>
 
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           {/* Left: technical skills as small cards in two columns */}
-          <div className="grid grid-cols-2 gap-4">
-              {technicalSkills.map(({ label, icon: Icon }, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 rounded-lg border border-border bg-card p-5 shadow-sm sm:p-6"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
-                    <Icon className="h-5 w-5" aria-hidden />
-                  </div>
-                  <span className="text-base font-medium text-foreground">
-                    {label}
-                  </span>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {technicalSkills.map(({ label, icon: Icon }, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-sm sm:gap-4 sm:p-5 md:p-6"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden />
                 </div>
-              ))}
+                <span className="text-base font-medium text-foreground">
+                  {label}
+                </span>
+              </div>
+            ))}
           </div>
 
           {/* Right: testimonial — flat, no card */}
           <FlatTestimonial
             quote="When things were complex or messy, Lindsey was the one bringing structure and calm to the situation. She cared about quality, understood the bigger picture, and followed through."
             name="Brent Story"
-            size='small'
+            size="small"
             title="CEO • EmitIQ"
             highlight="bringing structure and calm to the situation"
           />

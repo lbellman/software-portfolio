@@ -36,27 +36,27 @@ export default function FreecellPage() {
               Freecell Card Game
             </h1>
             <div className="mb-6 flex items-center justify-center gap-6">
-              <Image
-                src="/cursor-logo.svg"
-                alt="Cursor"
-                width={64}
-                height={64}
-                className="h-8 w-8 object-contain md:h-14 md:w-18"
-              />
-              <Image
-                src="/react-logo.png"
-                alt="React"
-                width={64}
-                height={64}
-                className="h-8 w-8 object-contain md:h-14 md:w-18"
-              />
-              <Image
-                src="/tailwind-logo.svg"
-                alt="Tailwind CSS"
-                width={64}
-                height={64}
-                className="h-8 w-8 object-contain md:h-14 md:w-24"
-              />
+            <Image
+              src="/cursor-logo.svg"
+              alt="Cursor"
+              width={64}
+              height={64}
+              className="h-14 w-14 object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
+            />
+            <Image
+              src="/react-logo.png"
+              alt="React"
+              width={64}
+              height={64}
+              className="h-14 w-14 object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
+            />
+            <Image
+              src="/tailwind-logo.svg"
+              alt="Tailwind CSS"
+              width={64}
+              height={64}
+              className="h-14 w-24 object-contain sm:h-16 sm:w-28 md:h-20 md:w-32"
+            />
             </div>
 
             <Button asChild>
@@ -130,10 +130,8 @@ export default function FreecellPage() {
             <p>
               Since I had already started building the game before, I knew the
               general logic that was required to create and set up a Freecell
-              game. I decided to build it on the frontend only (no database),
-              since this had turned into an experiment to see how Cursor could
-              handle complex logic. <br /> I started by giving Cursor small,
-              well-defined tasks to see how it handled them. I checked the
+              game. I decided to build it on the frontend only (no database). I
+              started by giving Cursor small, well-defined tasks. I checked the
               generated code thoroughly and weighed it against what I would have
               done. The majority of the time, it passed my expectations.
               <br /> <br />
@@ -155,7 +153,19 @@ export default function FreecellPage() {
               to fix individual bugs one on top of the other. In each iteration,
               it added more code, causing more confusion and more bugs. I
               finally had to step in and write the logic myself. After I gave it
-              a nudge in the right direction, it knew exactly what to do.
+              a nudge in the right direction, however, it knew exactly what to
+              do.
+            </p>
+            <p>
+              Ultimately, this whole experience made me glad that I entered the
+              tech industry before the emergence of AI. That I was humbled
+              through countless hours on Stack Overflow, reading technical
+              documentation word-for-word, breaking and rebuilding code, and
+              hunting down miniscule bugs late into the night. That experience
+              strengthened my ability to solve problems creatively, to respect
+              the code that I write, and to instinctively recognize bad
+              patterns, which is a crucial skill for any developer trying to
+              leverage AI.
             </p>
           </div>
         </div>
@@ -220,8 +230,8 @@ export default function FreecellPage() {
                   <br />
                   <span className="text-primary font-semibold">
                     Ask it for suggestions, then do your research on what it
-                    gives back. This is a great way to ensure that you continue
-                    to grow as a developer.
+                    gives back. This is a great way to ensure that you, as a
+                    developer, continue to grow.
                   </span>
                 </p>
               </li>
@@ -240,6 +250,26 @@ export default function FreecellPage() {
                   <br />
                   <span className="text-primary font-semibold">
                     Come up with a set of foundational rules, and stick to them.
+                  </span>
+                </p>
+              </li>
+              <li className="text-foreground mt-6">
+                <strong>5. Don&apos;t stop learning.</strong>
+                <p>
+                  All together now: &quot;AI is a powerful tool, but it is not a
+                  replacement for human intelligence&quot;. The knee-jerk
+                  reaction of asking AI to solve all your bugs is a slippery
+                  slope to becoming a passive developer. You need to be able to
+                  think critically and creatively to even use it effectively.
+                  You need to be able to understand the code you are writing,
+                  and the code you are reading. You need to be able to
+                  understand the problems you are solving, and why you are
+                  solving them.
+                  <br />
+                  <span className="text-primary font-semibold">
+                    Read documentation, take courses, practice new skills. Ask
+                    AI to explain things to you. Learn new technologies. Grow as
+                    a developer, and a person.
                   </span>
                 </p>
               </li>

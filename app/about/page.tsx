@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import { BookOpen, Palette, Sparkles } from "lucide-react";
 import AboutHero from "@/components/AboutHero";
 import AboutImageCarousel from "@/components/AboutImageCarousel";
 import FadeUpSection from "@/components/FadeUpSection";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "About | Lindsey Bellman",
@@ -43,14 +43,17 @@ const FREE_TIME_SECTIONS = [
       "Music theory",
       "Philosophy",
       "Greek mythology",
-      "Ancient civilizations",
+      "Plant biology",
     ],
   },
 ] as const;
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="relative min-h-screen bg-background pb-16">
+    <main
+      id="main-content"
+      className="relative min-h-screen bg-background pb-16"
+    >
       <AboutHero />
 
       {/* My story — image left, text right */}
@@ -69,27 +72,31 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I was first introduced to coding in University, where I majored
-                in Music and Computer Science. The Computer Science part was
-                more of a curiosity, but I quickly discovered that coding was a
-                perfect fit for me. It combined the creative and logical sides
-                of my brain in a way that was both challenging and supremely
-                satisfying.
+                In 2022, I had coffee with a friend who owned a climate tech
+                startup. The company was in a growth stage, and they needed
+                developers. I had just graduated with a BSc in Music and
+                Computer Science, and was looking for my first job. I was
+                hesitant, but after several discussions and meetings with the
+                team, I agreed to come on board. I started as a Junior Animator,
+                creating 3D graphics in Blender. Very quickly, though, they
+                began assigning me programming tasks. I had never written a line
+                of TypeScript or React before, and suddenly I was building
+                production features in both.
+                <br />
+                <br />I was thrown immediately in the deep end, I stayed late
+                every day, determined to learn and accomplish as much as
+                possible. I said yes to every task they gave me, even if I had
+                no idea how to do it, and each time I came out with more skill,
+                more tenacity, and more confidence. Eight months later, I was
+                promoted to Lead Frontend Developer.
                 <br />
                 <br />
-                The music side of my degree was a perfect compliment. I studied
-                digital signal flow, audio engineering, and music production.
-                While these are different disciplines, they share common
-                principles with coding; the art of critical problem solving,
-                following a thread deep into a complex system, finding the
-                balance between form and function, and most importantly, the
-                ability to zoom out and see the big picture. As a result of all
-                these experiences,{" "}
-                <span className="font-semibold text-primary">
-                  I maintain a deep respect for the art of designing and
-                  building a system, and this sentiment pervades everything I
-                  do.
-                </span>
+                Since then, I’ve worked as a Senior Software Engineer across
+                both professional teams and personal projects. Those first eight
+                months were a visceral and challenging experience, but they
+                permanently changed how I see myself. I no longer worry about
+                not &quot;knowing&quot; a technology. I trust my ability to
+                learn, adapt, and master any tool I&apos;m given.
               </p>
             </div>
           </div>
@@ -102,6 +109,57 @@ export default function AboutPage() {
               sizes="(min-width: 768px) 50vw, 100vw"
             />
           </div>
+        </div>
+      </FadeUpSection>
+
+      {/* Ryan Lider testimonial — centered card */}
+      <FadeUpSection
+        className="border-t border-border px-6 py-16 md:py-20 lg:px-12"
+        delayMs={50}
+      >
+        <div className="mx-auto max-w-3xl">
+          <blockquote className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+              <p>
+                &quot;I&apos;ll be the first to admit that when we first
+                interviewed Lindsey, I was skeptical. However, over the several
+                years she spent at our startup, she proved me completely wrong.
+              </p>
+              <p>
+                Lindsey didn&apos;t just grow into the job; she blew past every
+                milestone we set for her. She started as a junior frontend dev
+                and worked her way up to becoming a powerhouse senior full-stack
+                engineer. In a startup, you need people who can handle chaos and
+                learn on the fly, and Lindsey is exactly that.
+              </p>
+              <p>
+                She has a rare combination of being incredibly detailed with her
+                code while remaining a fast, smart problem solver. Whenever
+                something broke or we needed to pivot (which happened very
+                often), she was frequently one of our team members to find and
+                propose paths forward. Because of that, we were able to put an
+                increasing amount of trust in her, eventually putting her in
+                charge of a small team as their lead. She proved to be just as
+                talented as a manager and leader as she is a coder.
+              </p>
+              <p>
+                Her work ethic is genuinely top-tier. She&apos;s one of those
+                rare hires who makes you glad you were wrong. Any team would be
+                lucky to have her, and I&apos;d work with her again in a
+                heartbeat.&quot;
+              </p>
+            </div>
+            <footer className="mt-6 border-t border-border pt-6">
+              <cite className="not-italic">
+                <span className="block font-semibold text-foreground">
+                  Ryan Lider
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  CTO & my direct supervisor
+                </span>
+              </cite>
+            </footer>
+          </blockquote>
         </div>
       </FadeUpSection>
 
@@ -191,6 +249,9 @@ export default function AboutPage() {
                 open to new opportunities.
               </p>
             </div>
+            <Button className="mt-6" asChild>
+              <Link href="/#get-in-touch">Get In Touch</Link>
+            </Button>
           </div>
         </div>
       </FadeUpSection>
@@ -258,7 +319,10 @@ export default function AboutPage() {
 
       <div className="h-32" />
       {/* Footer text image */}
-      <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden px-8 opacity-[0.05]" aria-hidden>
+      <div
+        className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden px-8 opacity-[0.05]"
+        aria-hidden
+      >
         <Image
           src="/footer-text.svg"
           alt=""

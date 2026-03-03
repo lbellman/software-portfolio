@@ -22,7 +22,7 @@ const stewardBullets = [
 ];
 
 export default function WhoIAmSection() {
-  const { ref: sectionRef, isVisible } = useFadeUp({ delayMs: 500 });
+  const { ref: sectionRef, isVisible } = useFadeUp({ delayMs: 100});
 
   return (
     <section
@@ -42,7 +42,7 @@ export default function WhoIAmSection() {
         >
           Who I Am
         </h2>
-        <p className="mx-auto text-lg max-w-2xl text-muted-foreground">
+        <p className="mx-auto text-sm max-w-2xl md:text-lg text-muted-foreground">
           I am a Full-Stack Software Engineer with a focus on frontend
           development. My core values can be distilled into two archetypes:
         </p>

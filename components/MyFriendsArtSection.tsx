@@ -8,7 +8,7 @@ export default function MyFriendsArtSection() {
     <section className="relative w-full py-10 grid md:grid-cols-2 grid-cols-1 ">
       {/* Left side: title, tags, description, CTA */}
       <div className="w-full flex items-center justify-center">
-        <div className="flex flex-col flex-nowrap  px-16">
+        <div className="flex flex-col flex-nowrap px-6 sm:px-10 lg:px-16">
           <p
             className="uppercase-overline mb-8 animate-fade-up opacity-0"
             style={{ animationDelay: "0.2s" }}
@@ -26,7 +26,7 @@ export default function MyFriendsArtSection() {
           />
 
           <div
-            className="flex items-center gap-5 animate-fade-up opacity-0"
+            className="flex flex-wrap items-center justify-center gap-4 sm:justify-start sm:gap-5 animate-fade-up opacity-0"
             style={{ animationDelay: "0.6s" }}
           >
             <Image
@@ -34,7 +34,7 @@ export default function MyFriendsArtSection() {
               alt="React"
               width={64}
               height={64}
-              className="h-8 w-8 object-contain md:h-14 md:w-18"
+              className="h-12 w-14 object-contain md:h-14 md:w-18"
             />
             <Image
               src="/supabase-logo.svg"
@@ -55,7 +55,7 @@ export default function MyFriendsArtSection() {
               alt="Stripe"
               width={64}
               height={64}
-              className="h-10 w-20 object-contain md:h-14 md:w-14"
+              className="h-10 w-16 object-contain md:h-14 md:w-14"
             />
           </div>
 

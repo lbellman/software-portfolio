@@ -79,7 +79,7 @@ export default function AboutImageCarousel() {
           ))}
         </div>
 
-        <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 justify-center gap-2 rounded-full bg-background/80 px-3 py-2 backdrop-blur-sm">
+        <div className="absolute bottom-4 left-1/2 z-10 hidden -translate-x-1/2 justify-center gap-2 rounded-full bg-background/80 px-3 py-2 backdrop-blur-sm md:flex">
           {CAROUSEL_IMAGES.map(({ src }, index) => (
             <button
               key={src}

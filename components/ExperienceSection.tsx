@@ -161,14 +161,16 @@ export default function ExperienceSection() {
               aria-roledescription="slide"
               aria-label={`Slide ${index + 1} of ${totalSlides}`}
             >
-              {/* Testimonial - left */}
-              <FlatTestimonial
-                quote={item.testimonial.quote}
-                name={item.testimonial.name}
-                title={item.testimonial.title}
-                highlight={item.testimonial.highlight}
-                size="small"
-              />
+              {/* Testimonial - left (desktop only) */}
+              <div className="hidden md:block">
+                <FlatTestimonial
+                  quote={item.testimonial.quote}
+                  name={item.testimonial.name}
+                  title={item.testimonial.title}
+                  highlight={item.testimonial.highlight}
+                  size="small"
+                />
+              </div>
 
               {/* Experience card - right */}
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8">

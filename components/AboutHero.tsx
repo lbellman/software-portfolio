@@ -26,12 +26,11 @@ export default function AboutHero() {
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-background/70" aria-hidden />
       {/* Content */}
-      <div
-        className={`relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center transition-all duration-700 ${
-          isVisible ? "animate-fade-up" : "opacity-0 translate-y-5"
-        }`}
-      >
-        <div className="relative mb-6 h-52 w-52 overflow-hidden rounded-full border-4 border-border bg-card shadow-md md:h-62 md:w-62 ">
+      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center transition-all duration-700">
+        <div
+          className="animate-fade-up opacity-0 relative mb-6 h-52 w-52 overflow-hidden rounded-full border-4 border-border bg-card shadow-md md:h-62 md:w-62 "
+          style={{ animationDelay: "0.2s" }}
+        >
           <Image
             src="/about/headshot.webp"
             alt="Lindsey Bellman"
@@ -43,11 +42,15 @@ export default function AboutHero() {
         </div>
         <h1
           id="about-heading"
-          className="mb-2 text-3xl font-light tracking-editorial md:text-4xl"
+          className="mb-2 text-3xl animate-fade-up opacity-0 font-light tracking-editorial md:text-4xl"
+          style={{ animationDelay: "0.4s" }}
         >
           Lindsey Bellman
         </h1>
-        <p className="text-lg ">
+        <p
+          className="text-lg animate-fade-up opacity-0"
+          style={{ animationDelay: "0.6s" }}
+        >
           Full Stack Software Engineer (Frontend-Leaning)
         </p>
       </div>
