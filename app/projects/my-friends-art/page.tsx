@@ -333,7 +333,10 @@ export default function MyFriendsArtPage() {
                   for auth, and database.
                 </p>
                 <p>
-                  <span className="font-medium text-primary-foreground">
+                  <span
+                    className="font-medium"
+                    style={{ color: primaryPinkForeground }}
+                  >
                     Design system strategy:
                   </span>{" "}
                   Defining a small, consistent set of tokens keeps the UI
@@ -434,6 +437,15 @@ export default function MyFriendsArtPage() {
             accentColor={primaryPinkForeground}
           />
         </FadeUpSection>
+
+        <div className="px-6 pt-8 pb-10 text-center">
+          <Link
+            href="/projects"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            ← Back to projects
+          </Link>
+        </div>
       </main>
     </div>
   );

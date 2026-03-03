@@ -277,6 +277,15 @@ export default function FreecellPage() {
           </div>
         </div>
       </section>
+
+      <div className="px-6 pt-8 text-center">
+        <Link
+          href="/projects"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          ← Back to projects
+        </Link>
+      </div>
     </main>
   );
 }

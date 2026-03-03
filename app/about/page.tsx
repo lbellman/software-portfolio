@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-muted">
             <Image
               src="/about/paris-conference.webp"
-              alt="Paris conference"
+              alt="Lindsey and a colleague at a conference in Paris"
               fill
               className="object-cover"
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -202,8 +202,8 @@ export default function AboutPage() {
           </div>
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-muted">
             <Image
-              src="/about/horse.webp"
-              alt="Paris conference"
+              src="/about/horse-ride.webp"
+              alt="Lindsey standing next to a horse"
               fill
               className="object-cover"
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -316,6 +316,15 @@ export default function AboutPage() {
       <FadeUpSection as="div" className="border-t border-border" delayMs={200}>
         <AboutImageCarousel />
       </FadeUpSection>
+
+      <div className="px-6 pt-8 text-center">
+        <Link
+          href="/"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          ← Back to home
+        </Link>
+      </div>
 
       <div className="h-32" />
       {/* Footer text image */}
