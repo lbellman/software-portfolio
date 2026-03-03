@@ -36,27 +36,27 @@ export default function FreecellPage() {
               Freecell Card Game
             </h1>
             <div className="mb-6 flex items-center justify-center gap-6">
-            <Image
-              src="/cursor-logo.svg"
-              alt="Cursor"
-              width={64}
-              height={64}
-              className="h-14 w-14 object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
-            />
-            <Image
-              src="/react-logo.png"
-              alt="React"
-              width={64}
-              height={64}
-              className="h-14 w-14 object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
-            />
-            <Image
-              src="/tailwind-logo.svg"
-              alt="Tailwind CSS"
-              width={64}
-              height={64}
-              className="h-14 w-24 object-contain sm:h-16 sm:w-28 md:h-20 md:w-32"
-            />
+              <Image
+                src="/cursor-logo.svg"
+                alt="Cursor"
+                width={64}
+                height={64}
+                className="h-14 w-14 object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
+              />
+              <Image
+                src="/react-logo.png"
+                alt="React"
+                width={64}
+                height={64}
+                className="h-14 w-14 object-contain sm:h-16 sm:w-16 md:h-20 md:w-20"
+              />
+              <Image
+                src="/tailwind-logo.svg"
+                alt="Tailwind CSS"
+                width={64}
+                height={64}
+                className="h-14 w-24 object-contain sm:h-16 sm:w-28 md:h-20 md:w-32"
+              />
             </div>
 
             <Button asChild>
@@ -190,7 +190,7 @@ export default function FreecellPage() {
                   will be an absolute abomination. Ultimately, this will cause
                   more trouble in the long run.
                   <br />
-                  <span className="text-primary font-semibold">
+                  <span className="font-semibold">
                     Make sure you know the implementation plan. Use AI to
                     brainstorm if necessary, but when it comes to actual coding,
                     you control the process.
@@ -209,7 +209,7 @@ export default function FreecellPage() {
                   handle, and there are some layers of abstraction that seem to
                   be unreachable for it at this point in time.
                   <br />
-                  <span className="text-primary font-semibold">
+                  <span className="font-semibold">
                     Come up with a rough plan in your head, and then give it
                     small, incremental tasks to achieve that goal. I have found
                     that it works exceptionally well when used in this way.
@@ -228,7 +228,7 @@ export default function FreecellPage() {
                   were problematic, or just simple human-errors that you have
                   overlooked.
                   <br />
-                  <span className="text-primary font-semibold">
+                  <span className="font-semibold">
                     Ask it for suggestions, then do your research on what it
                     gives back. This is a great way to ensure that you, as a
                     developer, continue to grow.
@@ -248,7 +248,7 @@ export default function FreecellPage() {
                   sizes. These kinds of things will save you a lot of time and
                   effort.
                   <br />
-                  <span className="text-primary font-semibold">
+                  <span className="font-semibold">
                     Come up with a set of foundational rules, and stick to them.
                   </span>
                 </p>
@@ -266,7 +266,7 @@ export default function FreecellPage() {
                   understand the problems you are solving, and why you are
                   solving them.
                   <br />
-                  <span className="text-primary font-semibold">
+                  <span className="font-semibold">
                     Read documentation, take courses, practice new skills. Ask
                     AI to explain things to you. Learn new technologies. Grow as
                     a developer, and a person.

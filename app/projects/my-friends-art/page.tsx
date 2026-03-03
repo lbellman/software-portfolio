@@ -71,6 +71,7 @@ export default function MyFriendsArtPage() {
                   style={{
                     animationDelay: "500ms",
                     backgroundColor: primaryPinkText,
+                    color: primaryPinkForeground,
                   }}
                 >
                   myfriendsart.ca

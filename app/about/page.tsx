@@ -60,7 +60,7 @@ export default function AboutPage() {
       <FadeUpSection
         id="my-story"
         aria-labelledby="my-story-heading"
-        className="border-t border-border px-6 py-16 md:py-20 lg:px-12"
+        className="px-6 py-16 md:py-20 lg:px-12"
       >
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-12 lg:gap-16 md:items-center">
           <div>

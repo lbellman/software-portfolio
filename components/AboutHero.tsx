@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useFadeUp } from "@/hooks/useFadeUp";
 
 export default function AboutHero() {
-  const { ref: sectionRef, isVisible } = useFadeUp();
+  const { ref: sectionRef } = useFadeUp();
 
   return (
     <section
@@ -23,8 +23,11 @@ export default function AboutHero() {
           priority
         />
       </div>
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-background/70" aria-hidden />
+      {/* Overlay for readability + bottom fade into background */}
+      <div
+        className="absolute inset-0 bg-linear-to-b from-background/80 via-background/80 to-background"
+        aria-hidden
+      />
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center transition-all duration-700">
         <div

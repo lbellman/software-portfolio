@@ -4,12 +4,15 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
 const CAROUSEL_IMAGES = [
-  { src: "/about/beach.webp", alt: "Beach" },
-  { src: "/about/horse-ride.webp", alt: "Horse" },
-  { src: "/about/conference.webp", alt: "Conference" },
-  { src: "/about/van.webp", alt: "Van" },
-  { src: "/about/winston-car.webp", alt: "Winston" },
-  { src: "/about/trail.webp", alt: "Trail" },
+  { src: "/about/beach.webp", alt: "Lindsey on a beach" },
+  { src: "/about/horse-ride.webp", alt: "Lindsey standing next to a horse" },
+  {
+    src: "/about/conference.webp",
+    alt: "Lindsey and a colleague at a conference in Paris",
+  },
+  { src: "/about/van.webp", alt: "Lindsey in front of a camper van" },
+  { src: "/about/winston-car.webp", alt: "Lindsey and cat (Winston) in a car" },
+  { src: "/about/trail.webp", alt: "Lindsey on a hiking trail" },
 ] as const;
 
 // Duplicate for infinite loop (first slide repeated at end)
