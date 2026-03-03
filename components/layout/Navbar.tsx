@@ -76,44 +76,73 @@ function Navbar() {
                 className="h-36 w-36 shrink-0 object-contain"
               />
             </Link>
-            {pathname && pathname !== "/" && (
-              <nav
-                aria-label="Breadcrumb"
-                className="items-center flex flex-nowrap gap-2 text-xs font-semibold"
-              >
-                /{" "}
-                {pathname
-                  .split("/")
-                  .filter(Boolean)
-                  .map((segment, index, all) => {
-                    const href = "/" + all.slice(0, index + 1).join(" / ");
-                    const label = segment
+            {pathname && pathname !== "/" && (() => {
+              const segments = pathname.split("/").filter(Boolean);
+              if (segments.length === 0) return null;
+
+              const formatLabel = (segment: string) =>
+                segment === "my-friends-art"
+                  ? "My Friend’s Art"
+                  : segment
                       .split("-")
                       .map(
-                        (part) => part.charAt(0).toUpperCase() + part.slice(1),
+                        (part) =>
+                          part.charAt(0).toUpperCase() + part.slice(1),
                       )
                       .join(" ");
 
-                    const isLast = index === all.length - 1;
+              const firstSegment = segments[0];
+              const firstHref = `/${firstSegment}`;
+              const firstLabel = formatLabel(firstSegment);
 
-                    return (
-                      <span key={href} className="flex items-center gap-2">
-                        {index > 0 && <span>/</span>}
-                        {isLast ? (
-                          <span className="text-foreground">{label}</span>
-                        ) : (
-                          <Link
-                            href={href}
-                            className="hover:text-foreground transition-colors"
-                          >
-                            {label}
-                          </Link>
-                        )}
-                      </span>
-                    );
-                  })}
-              </nav>
-            )}
+              return (
+                <>
+                  {/* Mobile: only show first segment */}
+                  <nav
+                    aria-label="Breadcrumb"
+                    className="flex items-center gap-2 text-xs font-semibold sm:hidden"
+                  >
+                    /{" "}
+                    <Link
+                      href={firstHref}
+                      className="hover:text-foreground transition-colors"
+                    >
+                      {firstLabel}
+                    </Link>
+                  </nav>
+
+                  {/* Desktop+: show full path */}
+                  <nav
+                    aria-label="Breadcrumb"
+                    className="hidden items-center flex-nowrap gap-2 text-xs font-semibold sm:flex"
+                  >
+                    /{" "}
+                    {segments.map((segment, index) => {
+                      const href =
+                        "/" + segments.slice(0, index + 1).join("/");
+                      const label = formatLabel(segment);
+                      const isLast = index === segments.length - 1;
+
+                      return (
+                        <span key={href} className="flex items-center gap-2">
+                          {index > 0 && <span>/</span>}
+                          {isLast ? (
+                            <span className="text-foreground">{label}</span>
+                          ) : (
+                            <Link
+                              href={href}
+                              className="hover:text-foreground transition-colors"
+                            >
+                              {label}
+                            </Link>
+                          )}
+                        </span>
+                      );
+                    })}
+                  </nav>
+                </>
+              );
+            })()}
           </div>
 
           {/* Desktop navigation */}

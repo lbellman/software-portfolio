@@ -693,8 +693,8 @@ const FreecellPlay = () => {
         <div>
           {/* Header Section */}
           <section className=" pt-28 pb-2 lg:px-12">
-            <div className="container mx-auto ">
-              <div className="flex items-center justify-between mb-8">
+            <div className="container mx-auto px-6">
+              <div className="flex items-center flex-col gap-4 sm:flex-row justify-between mb-8">
                 <div>
                   <Link
                     href="/projects/freecell"
@@ -707,11 +707,7 @@ const FreecellPlay = () => {
                   <div className="text-sm text-muted-foreground">
                     Moves: {moveCount}
                   </div>
-                  <Button
-                    variant="outline"
-                    
-                    onClick={handleRefreshGame}
-                  >
+                  <Button variant="outline" onClick={handleRefreshGame}>
                     <RefreshCcw className="size-4" />
                     Refresh Game
                   </Button>
@@ -725,7 +721,6 @@ const FreecellPlay = () => {
               <div className="flex justify-center">
                 <div className="grid grid-cols-8 gap-0.5 sm:gap-1 md:gap-4 lg:gap-6">
                   {/* Foundation Piles */}
-
                   {foundationPiles?.map((pile: Pile, idx: number) => {
                     const cards = pile.cards || [];
                     const visibleCard =
@@ -765,7 +760,6 @@ const FreecellPlay = () => {
                   })}
 
                   {/* Free Cells */}
-
                   {freecells?.map((cell: Pile, idx: number) => {
                     const card = cell.cards?.[0] as Card;
                     const isOver = overId === cell.id;
@@ -801,8 +795,8 @@ const FreecellPlay = () => {
               </div>
 
               {/* Columns */}
-              <div className="mt-8 w-full justify-center flex ">
-                <div className="gap-0.5 sm:gap-1 md:gap-4 lg:gap-6 grid grid-cols-8">
+              <div className="mt-8 px-1  w-full justify-center flex ">
+                <div className="gap-1 sm:gap-1 md:gap-4 lg:gap-6 grid grid-cols-8">
                   {tableauPiles?.map((column: Pile, idx: number) => {
                     const cards = (column.cards || []).filter(
                       (card): card is Card => card !== null,
