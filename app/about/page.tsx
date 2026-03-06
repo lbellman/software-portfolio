@@ -2,6 +2,7 @@ import AboutHero from "@/components/AboutHero";
 import AboutImageCarousel from "@/components/AboutImageCarousel";
 import FadeUpSection from "@/components/FadeUpSection";
 import { Button } from "@/components/ui/button";
+import { Quote } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -114,11 +115,12 @@ export default function AboutPage() {
 
       {/* Ryan Lider testimonial — centered card */}
       <FadeUpSection
-        className="border-t border-border px-6 py-16 md:py-20 lg:px-12"
+        className="border-t border-border px-6 py-16 md:py-20 lg:px-12 bg-secondary"
         delayMs={50}
       >
         <div className="mx-auto max-w-3xl">
-          <blockquote className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
+          <blockquote className="rounded-xl relative border border-white/25 bg-white/60 p-11 shadow-lg shadow-black/5 backdrop-blur-md md:p-13">
+            <Quote className="absolute top-6 left-6 size-8 text-secondary/30" />
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 &quot;I&apos;ll be the first to admit that when we first
@@ -129,8 +131,8 @@ export default function AboutPage() {
                 Lindsey didn&apos;t just grow into the job; she blew past every
                 milestone we set for her. She started as a junior frontend dev
                 and worked her way up to becoming a powerhouse senior full-stack
-                engineer. In a startup, you need people who can handle chaos and
-                learn on the fly, and Lindsey is exactly that.
+                engineer. <span className="font-semibold text-secondary">In a startup, you need people who can handle chaos and
+                learn on the fly, and Lindsey is exactly that.</span>
               </p>
               <p>
                 She has a rare combination of being incredibly detailed with her
@@ -216,19 +218,19 @@ export default function AboutPage() {
       <FadeUpSection
         id="my-vision"
         aria-labelledby="my-vision-heading"
-        className="border-t border-border px-6 py-16 md:py-20 lg:px-12"
+        className="border-t border-border px-6 py-16 md:py-20 lg:px-12 bg-primary"
         delayMs={150}
       >
         <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-3xl text-center text-primary-foreground font-medium">
             <h2
               id="my-vision-heading"
-              className="mb-6 text-2xl font-light tracking-editorial md:text-3xl"
+              className="mb-6 text-2xl font-light tracking-editorial text-primary-foreground md:text-3xl "
             >
               My Vision
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
+            <div className="space-y-4 leading-relaxed">
+              <p className="text-primary-foreground">
                 I see myself wearing many hats in my career. I am a professional
                 software engineer, but I am also an artist, a writer, a
                 musician, and a visionary, and all of these qualities have
@@ -236,7 +238,7 @@ export default function AboutPage() {
                 creativity is the bottom-line, and I learn lessons in each of
                 them that apply to all other aspects of my life.
               </p>
-              <p>
+              <p className="text-primary-foreground">
                 I see myself thriving as the leader of a small, creative team
                 building something meaningful and impactful. I also see myself
                 succeeding as an independent engineer, owning the evolution of a
@@ -244,12 +246,12 @@ export default function AboutPage() {
                 to me as much as the opportunity to learn, to contribute, and to
                 collaborate with like-minded people.
               </p>
-              <p>
+              <p className="text-primary-foreground">
                 If these values resonate with you, please reach out. I am always
                 open to new opportunities.
               </p>
             </div>
-            <Button className="mt-6" asChild>
+            <Button className="mt-6" size="lg" asChild variant="secondary">
               <Link href="/#get-in-touch">Get In Touch</Link>
             </Button>
           </div>
