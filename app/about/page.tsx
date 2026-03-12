@@ -169,7 +169,7 @@ export default function AboutPage() {
       <FadeUpSection
         id="my-values"
         aria-labelledby="my-values-heading"
-        className="border-t border-border px-6 py-16 md:py-20 lg:px-12"
+        className="px-6 py-16 md:py-20 lg:px-12"
         delayMs={100}
       >
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-12 lg:gap-16 md:items-center">
@@ -262,7 +262,7 @@ export default function AboutPage() {
       <FadeUpSection
         id="in-my-free-time"
         aria-labelledby="in-my-free-time-heading"
-        className="border-t border-border px-6 py-16 md:py-20 lg:px-12"
+        className="px-6 py-16 md:py-20 lg:px-12"
         delayMs={100}
       >
         <div className="mx-auto max-w-6xl">
@@ -315,7 +315,7 @@ export default function AboutPage() {
       </FadeUpSection>
 
       {/* Scrolling images + thumbnails */}
-      <FadeUpSection as="div" className="border-t border-border" delayMs={200}>
+      <FadeUpSection as="div" className="" delayMs={200}>
         <AboutImageCarousel />
       </FadeUpSection>
 

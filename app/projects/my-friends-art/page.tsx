@@ -115,7 +115,7 @@ export default function MyFriendsArtPage() {
                   Figma
                 </Link>
                 <Link
-                  href="https://my-friends-art-git-7-storybook-e11211-lindsey-bellmans-projects.vercel.app/"
+                  href="https://storybook.myfriendsart.ca"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline"
