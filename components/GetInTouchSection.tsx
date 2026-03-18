@@ -56,7 +56,7 @@ export default function GetInTouchSection() {
               <li>
                 <Link
                   href={`mailto:${contact.email}`}
-                  className="flex items-center gap-2.5 text-base transition-colors hover:text-primary md:text-lg"
+                  className="flex items-center gap-2.5 text-base transition-colors hover:text-primary-foreground md:text-lg"
                 >
                   <Image
                     src="/gmail-logo.svg"
@@ -65,7 +65,7 @@ export default function GetInTouchSection() {
                     height={24}
                     className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5"
                   />
-                  <p className="hover:text-primary text-sm transition-colors">
+                  <p className="hover:text-primary-foreground text-sm transition-colors">
                     {contact.email}
                   </p>
                 </Link>
@@ -75,7 +75,7 @@ export default function GetInTouchSection() {
                   href={contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-base transition-colors hover:text-primary md:text-lg"
+                  className="flex items-center gap-2.5 text-base transition-colors hover:text-primary-foreground md:text-lg"
                 >
                   <Image
                     src="/linkedin-logo.svg"
@@ -84,7 +84,7 @@ export default function GetInTouchSection() {
                     height={24}
                     className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5"
                   />
-                  <p className="hover:text-primary transition-colors text-sm">
+                  <p className="hover:text-primary-foreground transition-colors text-sm">
                     LinkedIn
                   </p>
                 </Link>
@@ -94,7 +94,7 @@ export default function GetInTouchSection() {
                   href={contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-base transition-colors hover:text-primary md:text-lg"
+                  className="flex items-center gap-2.5 text-base transition-colors hover:text-primary-foreground md:text-lg"
                 >
                   <Image
                     src="/github-logo.svg"
@@ -103,7 +103,7 @@ export default function GetInTouchSection() {
                     height={24}
                     className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5"
                   />
-                  <p className="hover:text-primary text-sm transition-colors">
+                  <p className="hover:text-primary-foreground text-sm transition-colors">
                     GitHub
                   </p>
                 </Link>
