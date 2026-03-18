@@ -26,7 +26,7 @@ function HeroSection() {
             className="uppercase-overline animate-fade-up opacity-0"
             style={{ animationDelay: "0.2s" }}
           >
-            Full Stack Software Engineer (Frontend-Leaning)
+            Senior Software Engineer
           </p>
 
           <div className="space-y-4">

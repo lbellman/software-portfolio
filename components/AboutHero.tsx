@@ -54,7 +54,7 @@ export default function AboutHero() {
           className="text-lg animate-fade-up opacity-0"
           style={{ animationDelay: "0.6s" }}
         >
-          Full Stack Software Engineer (Frontend-Leaning)
+          Senior Software Engineer
         </p>
       </div>
     </section>
