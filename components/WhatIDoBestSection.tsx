@@ -42,8 +42,8 @@ export default function WhatIDoBestSection() {
           What I Do Best
         </h2>
         <p className="mx-auto mb-10 max-w-xl text-center text-sm md:text-lg text-primary-foreground md:mb-12">
-          I can adapt to any technical stack or domain, but this is what I
-          specialize in.
+          I can adapt to any technical stack or domain, but this is what I have
+          the most experience with.
         </p>
 
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
