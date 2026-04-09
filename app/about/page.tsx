@@ -119,7 +119,7 @@ export default function AboutPage() {
         delayMs={50}
       >
         <div className="mx-auto max-w-3xl">
-          <blockquote className="rounded-xl relative border border-white/25 bg-white/60 p-11 shadow-lg shadow-black/5 backdrop-blur-md md:p-13">
+          <blockquote className="rounded-xl relative border border-white/25 bg-white/80 p-11 shadow-lg shadow-black/5 backdrop-blur-md md:p-13">
             <Quote className="absolute top-6 left-6 size-8 text-secondary/30" />
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>

@@ -59,7 +59,7 @@ export default function FreecellCardGameSection() {
           <p className="mb-8 px-6 ">
             A classic FreeCell solitaire game built with React/TypeScript and
             Cursor AI. The goal was to experiment with AI-assisted development,
-            learn how best to use it, and document where it speed up or slows
+            learn how best to use it, and document where it speeds up or slows
             down the development process.
           </p>
           <Button asChild className="mb-10">

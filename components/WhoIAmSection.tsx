@@ -43,7 +43,7 @@ export default function WhoIAmSection() {
           Who I Am
         </h2>
         <p className="mx-auto text-sm max-w-2xl md:text-lg text-muted-foreground">
-          I am a Senior Software Engineer with a focus on frontend development.
+          I am a Full-Stack Software Developer with a focus on building bullet-proof software systems.
           My core values can be distilled into two archetypes:
         </p>
       </div>
@@ -75,7 +75,7 @@ export default function WhoIAmSection() {
               The Architect
             </h3>
             <p className="mb-6 text-muted-foreground">
-              Builds systems that scale.
+              Build systems that scale.
             </p>
             <ul className="space-y-3 text-sm text-foreground">
               {architectBullets.map((item, i) => (
@@ -112,7 +112,7 @@ export default function WhoIAmSection() {
               The Steward
             </h3>
             <p className="mb-6 text-muted-foreground">
-              Protects the integrity of the system.
+              Protect the integrity of the system.
             </p>
             <ul className="space-y-3 text-sm text-foreground" role="list">
               {stewardBullets.map((item, i) => (

@@ -82,7 +82,7 @@ export default function MyFriendsArtPage() {
                 className="flex flex-wrap items-center justify-center gap-6 mt-4 opacity-0 animate-fade-up"
                 style={{ animationDelay: "600ms" }}
               >
-                <Link
+                {/* <Link
                   href="https://github.com/lbellman/my-friends-art"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -97,7 +97,7 @@ export default function MyFriendsArtPage() {
                     className="h-6 w-6 object-contain"
                   />
                   GitHub
-                </Link>
+                </Link> */}
                 <Link
                   href="https://www.figma.com/design/wRrelj2lS04Bm5VrOwfsm7/My-Friend-s-Art?node-id=23-691&t=MZ64ZTwSrVYanSp8-1"
                   target="_blank"
@@ -432,12 +432,12 @@ export default function MyFriendsArtPage() {
           </div>
         </FadeUpSection>
         {/* Progress & Planning — GitHub issues & milestones. Set GITHUB_REPO or GITHUB_REPO_MFA in .env.local (e.g. owner/repo). */}
-        <FadeUpSection>
+        {/* <FadeUpSection>
           <ProgressAndPlanningSection
             repo={process.env.GITHUB_REPO_MFA ?? process.env.GITHUB_REPO}
             accentColor={primaryPinkForeground}
           />
-        </FadeUpSection>
+        </FadeUpSection> */}
 
         <div className="px-6 pt-8 pb-10 text-center">
           <Link

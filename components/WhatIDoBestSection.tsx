@@ -3,24 +3,24 @@
 import FlatTestimonial from "@/components/FlatTestimonial";
 import { useFadeUp } from "@/hooks/useFadeUp";
 import {
+  Book,
+  CheckCircle,
   Code2,
   Database,
-  GraduationCap,
-  Layers,
   Palette,
   PenTool,
-  type LucideIcon,
+  type LucideIcon
 } from "lucide-react";
 
 const sectionId = "what-i-do-best";
 
 const technicalSkills: { label: string; icon: LucideIcon }[] = [
   { label: "React / TypeScript", icon: Code2 },
-  { label: "Component Systems", icon: PenTool },
-  { label: "State Management", icon: Layers },
-  { label: "UI/UX Design", icon: Palette },
-  { label: "Database Management", icon: Database },
-  { label: "Technical Mentorship", icon: GraduationCap },
+  { label: "Frontend Architecture", icon: PenTool },
+  { label: "Database Design", icon: Database },
+  { label: "UI / UX Design", icon: Palette },
+  { label: "Unit / Integration Testing", icon: CheckCircle },
+  { label: "Code Documentation", icon: Book },
 ];
 
 export default function WhatIDoBestSection() {
@@ -52,7 +52,7 @@ export default function WhatIDoBestSection() {
             {technicalSkills.map(({ label, icon: Icon }, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 rounded-xl border border-white/50 bg-white/50 p-4 shadow-lg shadow-black/5 backdrop-blur-md sm:gap-4 sm:p-5 md:p-6"
+                className="flex items-center gap-3 rounded-xl border border-white/50 bg-white/60 p-4 shadow-lg shadow-black/5 backdrop-blur-md sm:gap-4 sm:p-5 md:p-6"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/25 text-primary-foreground backdrop-blur-sm">
                   <Icon className="h-5 w-5" aria-hidden />

@@ -18,7 +18,7 @@ const carouselItems = [
         "functional, intuitive, and presentation-ready from the very first iteration",
     },
     experience: {
-      role: "Senior Frontend Engineer",
+      role: "Senior Full-Stack Developer (Frontend-focused)",
       company: "EmitIQ",
       period: "2024 – 2025",
       highlights: [
@@ -60,7 +60,7 @@ const carouselItems = [
       highlight: "blessing to our entire team",
     },
     experience: {
-      role: "Lead Frontend Developer",
+      role: "Lead Developer (frontend-focused)",
       company: "Natureblocks",
       period: "2023 - 2024",
       highlights: [

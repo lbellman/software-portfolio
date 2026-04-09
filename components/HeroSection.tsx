@@ -26,7 +26,7 @@ function HeroSection() {
             className="uppercase-overline animate-fade-up opacity-0"
             style={{ animationDelay: "0.2s" }}
           >
-            Senior Software Engineer
+            Full-Stack Software Developer
           </p>
 
           <div className="space-y-4">
@@ -35,8 +35,8 @@ function HeroSection() {
               className="animate-fade-up opacity-0"
               style={{ animationDelay: "0.4s" }}
             >
-              Build thoughtfully.
-              <br className="hidden sm:block" /> Grow steadily.
+              Build thoughtfully,
+              <br className="hidden sm:block" /> grow steadily.
             </h1>
 
             <p
@@ -44,8 +44,7 @@ function HeroSection() {
               className="max-w-prose text-muted-foreground animate-fade-up opacity-0"
               style={{ animationDelay: "0.6s" }}
             >
-              I design clean, scalable software solutions in environments that
-              value integrity, clarity, and long-term impact.
+              I build clean, high quality software systems with a focus on scalability and integrity.
             </p>
           </div>
 
